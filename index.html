@@ -9,14 +9,39 @@
   h1{color:#1c7a68} h2{color:#1c7a68;margin-top:1.4rem}
   .updated{color:#777;font-size:.9rem}
   .ar{direction:rtl;text-align:right}
-  hr{border:none;border-top:1px solid #ddd;margin:2.5rem 0}
-  nav a{color:#1c7a68;margin-inline-end:1rem}
+  .bar{display:flex;gap:.5rem;align-items:center;border-bottom:1px solid #e3e3e3;padding-bottom:.8rem;margin-bottom:1.4rem}
+  .bar .grow{flex:1}
+  .bar a{color:#1c7a68;text-decoration:none;font-size:.95rem}
+  .lang{border:1px solid #1c7a68;background:#fff;color:#1c7a68;border-radius:999px;padding:.25rem .8rem;cursor:pointer;font:inherit;font-size:.9rem}
+  .lang.active{background:#1c7a68;color:#fff}
+  [hidden]{display:none}
 </style>
 </head>
 <body>
-<nav><a href="./terms.html">Terms / الشروط</a></nav>
+<div class="bar">
+  <button class="lang active" id="b-en" onclick="setLang('en')">English</button>
+  <button class="lang" id="b-ar" onclick="setLang('ar')">العربية</button>
+  <span class="grow"></span>
+  <a href="./terms.html">Terms / الشروط</a>
+</div>
 
-<section class="ar" lang="ar">
+<section id="en" lang="en">
+<h1>Privacy Policy - Shihab Apps</h1>
+<p class="updated">Last updated: 25 May 2026</p>
+<p>This privacy policy applies to all of our apps. Your privacy matters to us. This policy explains how our apps handle data.</p>
+<h2>Data we collect</h2>
+<p><strong>None.</strong> Our apps collect no personal or device information, and transmit or store nothing on any server. They work offline and request no unnecessary permissions.</p>
+<h2>Data stored on your device</h2>
+<p>Some apps may store simple preferences (such as a favorites list or display settings) locally on your device so they are remembered between sessions. This data never leaves your device and is removed if you uninstall the app.</p>
+<h2>Third parties</h2>
+<p>Our apps contain no ads, no analytics, and no third-party SDKs that collect data.</p>
+<h2>Children</h2>
+<p>Our apps are suitable for all ages and collect no data from anyone, including children.</p>
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:moaead@gmail.com">moaead@gmail.com</a></p>
+</section>
+
+<section id="ar" class="ar" lang="ar" hidden>
 <h1>سياسة الخصوصية - تطبيقات شهاب</h1>
 <p class="updated">آخر تحديث: ٢٥ مايو ٢٠٢٦</p>
 <p>تنطبق سياسة الخصوصية هذه على جميع تطبيقاتنا. خصوصيتك تهمّنا، وهذه السياسة توضّح كيف تتعامل تطبيقاتنا مع البيانات.</p>
@@ -32,22 +57,14 @@
 <p>لأيّ استفسارٍ: <a href="mailto:moaead@gmail.com">moaead@gmail.com</a></p>
 </section>
 
-<hr>
-
-<section lang="en">
-<h1>Privacy Policy - Shihab Apps</h1>
-<p class="updated">Last updated: 25 May 2026</p>
-<p>This privacy policy applies to all of our apps. Your privacy matters to us. This policy explains how our apps handle data.</p>
-<h2>Data we collect</h2>
-<p><strong>None.</strong> Our apps collect no personal or device information, and transmit or store nothing on any server. They work offline and request no unnecessary permissions.</p>
-<h2>Data stored on your device</h2>
-<p>Some apps may store simple preferences (such as a favorites list or display settings) locally on your device so they are remembered between sessions. This data never leaves your device and is removed if you uninstall the app.</p>
-<h2>Third parties</h2>
-<p>Our apps contain no ads, no analytics, and no third-party SDKs that collect data.</p>
-<h2>Children</h2>
-<p>Our apps are suitable for all ages and collect no data from anyone, including children.</p>
-<h2>Contact</h2>
-<p>Questions about this policy: <a href="mailto:moaead@gmail.com">moaead@gmail.com</a></p>
-</section>
+<script>
+function setLang(l){
+  document.getElementById('en').hidden = (l!=='en');
+  document.getElementById('ar').hidden = (l!=='ar');
+  document.getElementById('b-en').classList.toggle('active', l==='en');
+  document.getElementById('b-ar').classList.toggle('active', l==='ar');
+  document.documentElement.lang = l;
+}
+</script>
 </body>
 </html>

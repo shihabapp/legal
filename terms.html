@@ -9,14 +9,40 @@
   h1{color:#1c7a68} h2{color:#1c7a68;margin-top:1.4rem}
   .updated{color:#777;font-size:.9rem}
   .ar{direction:rtl;text-align:right}
-  hr{border:none;border-top:1px solid #ddd;margin:2.5rem 0}
-  nav a{color:#1c7a68;margin-inline-end:1rem}
+  .bar{display:flex;gap:.5rem;align-items:center;border-bottom:1px solid #e3e3e3;padding-bottom:.8rem;margin-bottom:1.4rem}
+  .bar .grow{flex:1}
+  .bar a{color:#1c7a68;text-decoration:none;font-size:.95rem}
+  .lang{border:1px solid #1c7a68;background:#fff;color:#1c7a68;border-radius:999px;padding:.25rem .8rem;cursor:pointer;font:inherit;font-size:.9rem}
+  .lang.active{background:#1c7a68;color:#fff}
+  [hidden]{display:none}
 </style>
 </head>
 <body>
-<nav><a href="./index.html">Privacy / الخصوصية</a></nav>
+<div class="bar">
+  <button class="lang active" id="b-en" onclick="setLang('en')">English</button>
+  <button class="lang" id="b-ar" onclick="setLang('ar')">العربية</button>
+  <span class="grow"></span>
+  <a href="./index.html">Privacy / الخصوصية</a>
+</div>
 
-<section class="ar" lang="ar">
+<section id="en" lang="en">
+<h1>Terms & Conditions - Shihab Apps</h1>
+<p class="updated">Last updated: 25 May 2026</p>
+<h2>Acceptance of terms</h2>
+<p>By using any of our apps you agree to these Terms & Conditions. If you do not agree, please do not use the app.</p>
+<h2>License and use</h2>
+<p>Our apps are free. You are granted a personal, non-exclusive license to use them for personal, non-commercial purposes. You may not resell them or distribute modified copies.</p>
+<h2>Content</h2>
+<p>Content is provided for educational and devotional purposes. We strive for accuracy; the apps are provided "as is" without warranties.</p>
+<h2>Disclaimer</h2>
+<p>You use the apps at your own risk. To the extent permitted by law, we are not liable for any damages arising from their use.</p>
+<h2>Changes to terms</h2>
+<p>We may update these terms from time to time; the updated version is posted at this URL with a revised date.</p>
+<h2>Contact</h2>
+<p>Questions: <a href="mailto:moaead@gmail.com">moaead@gmail.com</a></p>
+</section>
+
+<section id="ar" class="ar" lang="ar" hidden>
 <h1>الشروط والأحكام - تطبيقات شهاب</h1>
 <p class="updated">آخر تحديث: ٢٥ مايو ٢٠٢٦</p>
 <h2>قبول الشروط</h2>
@@ -33,23 +59,14 @@
 <p>للاستفسارات: <a href="mailto:moaead@gmail.com">moaead@gmail.com</a></p>
 </section>
 
-<hr>
-
-<section lang="en">
-<h1>Terms & Conditions - Shihab Apps</h1>
-<p class="updated">Last updated: 25 May 2026</p>
-<h2>Acceptance of terms</h2>
-<p>By using any of our apps you agree to these Terms & Conditions. If you do not agree, please do not use the app.</p>
-<h2>License and use</h2>
-<p>Our apps are free. You are granted a personal, non-exclusive license to use them for personal, non-commercial purposes. You may not resell them or distribute modified copies.</p>
-<h2>Content</h2>
-<p>Content is provided for educational and devotional purposes. We strive for accuracy; the apps are provided "as is" without warranties.</p>
-<h2>Disclaimer</h2>
-<p>You use the apps at your own risk. To the extent permitted by law, we are not liable for any damages arising from their use.</p>
-<h2>Changes to terms</h2>
-<p>We may update these terms from time to time; the updated version is posted at this URL with a revised date.</p>
-<h2>Contact</h2>
-<p>Questions: <a href="mailto:moaead@gmail.com">moaead@gmail.com</a></p>
-</section>
+<script>
+function setLang(l){
+  document.getElementById('en').hidden = (l!=='en');
+  document.getElementById('ar').hidden = (l!=='ar');
+  document.getElementById('b-en').classList.toggle('active', l==='en');
+  document.getElementById('b-ar').classList.toggle('active', l==='ar');
+  document.documentElement.lang = l;
+}
+</script>
 </body>
 </html>
