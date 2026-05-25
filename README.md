@@ -1,10 +1,10 @@
 # shihabapp/legal
 
-Public GitHub Pages site hosting privacy policies for all Shihab apps.
-Live at: https://shihabapp.github.io/legal/
+Public GitHub Pages site hosting ONE shared privacy policy + terms for all Shihab apps
+(all apps are offline and collect no data, so one shared policy is accurate for each).
 
-## Add a new app
-1. `cp -r asma <newapp>` and edit `<newapp>/index.html` (app name, data practices).
-2. Add a link to it in `index.html`.
-3. `git commit -am "add <newapp> policy" && git push`
-4. Privacy policy URL for Play: `https://shihabapp.github.io/legal/<newapp>/`
+Live:
+- Privacy: https://shihabapp.github.io/legal/
+- Terms:   https://shihabapp.github.io/legal/terms.html
+
+Use the same privacy URL in every app's Play Console listing.
